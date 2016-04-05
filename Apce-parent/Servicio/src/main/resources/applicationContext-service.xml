@@ -1,0 +1,299 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<import resource="classpath*:/**/applicationContext-dao.xml" />
+
+
+
+
+	<!-- ######################################################### -->
+	<!-- DEFINICIÓN DE LOS SERVICIOS -->
+	<!-- ######################################################### -->
+	<!-- <bean id="usuarioService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" 
+		parent="transactionParent"> <property name="target"> <bean id="usuarioServiceImpl" 
+		class="com.apce.servicio.servicio.Impl.UsuarioServiceImpl"> <property name="dao"> 
+		<ref bean="usuarioDAO"/> </property> </bean> </property> <property name="transactionManager"><ref 
+		bean="transactionManager"/></property> </bean> -->
+
+	<!-- <bean id="materiaPrimaService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" 
+		parent="transactionParent"> <property name="target"> <bean id="materiaPrimaServiceImpl" 
+		class="com.apce.servicio.impl.MateriaPrimaServiceImpl"> <property name="dao"> 
+		<ref bean="materiaPrimaDAO"/> </property> </bean> </property> <property name="transactionManager"><ref 
+		bean="transactionManager"/></property> </bean> -->
+	<!-- <bean id="materiaPrimaServiceImpl" class="com.apce.servicio.impl.MateriaPrimaServiceImpl"> 
+		<property name="dao"> <ref bean="materiaPrimaDAO"/> </property> </bean> -->
+
+	<!-- <bean id="sucursalService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" 
+		parent="transactionParent"> <property name="target"> <bean id="sucurusalServiceImpl" 
+		class="com.apce.servicio.servicio.Impl.SucursalServiceImpl"> <property name="dao"> 
+		<ref bean="sucursalDAO"/> </property> </bean> </property> <property name="transactionManager"><ref 
+		bean="transactionManager"/></property> </bean> FACADE <bean id="facadeService" 
+		class="com.apce.servicio.servicio.Impl.FacadeService"> <property name="usuarioService"> 
+		<ref bean="usuarioService" /> </property> <property name="materiaPrimaService"> 
+		<ref bean="materiaPrimaService" /> </property> <property name="sucursalService"> 
+		<ref bean="sucursalService" /> </property> </bean> -->
+
+
+	
+
+
+
+
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <beans> Catalunya <bean id="cargaServicioImplBDECatalunya" class="com.endesa.wgd.servicios.impl.CargaServicioImpl" 
+	singleton="false"> <property name="cargaDAO"><ref bean="cargaDAOBDECatalunya" 
+	/></property> </bean> <bean id="notaManualServicioImplBDECatalunya" class="com.endesa.wgd.servicios.impl.NotaManualServicioImpl" 
+	singleton="false"> <property name="notaManualDAO"><ref bean="notaManualDAOBDECatalunya" 
+	/></property> </bean> <bean id="filtrosNotasServicioImplBDECatalunya" class="com.endesa.wgd.servicios.impl.FiltrosNotasServicioImpl" 
+	singleton="false"> <property name="filtroNotasDAO"><ref bean="filtroNotasDAOBDECatalunya"/></property> 
+	</bean> <bean id="loginServicioImplBDECatalunya" class="com.endesa.grupoe.servicios.impl.LoginServicioImpl" 
+	singleton="false"> <property name="loginDAO"><ref bean="loginDAOBDECatalunya" 
+	/></property> </bean> <bean id="crisisServicioImplBDECatalunya" class="com.endesa.grupoe.servicios.impl.CrisisServicioImpl" 
+	singleton="false"> <property name="crisisDAO"><ref bean="crisisDAOBDECatalunya" 
+	/></property> </bean> <bean id="greServicioImplBDECatalunya" class="com.endesa.grupoe.servicios.impl.GreServicioImpl" 
+	singleton="false"> <property name="greDAO"><ref bean="greDAOBDECatalunya" 
+	/></property> </bean> <bean id="ubicacionDestinoServicioImplBDECatalunya" 
+	class="com.endesa.grupoe.servicios.impl.UbicacionDestinoServicioImpl" singleton="false"> 
+	<property name="ubicacionDestinoDAO"><ref bean="ubicacionDestinoDAOBDECatalunya" 
+	/></property> </bean> <bean id="gruposManiServicioImplBDECatalunya" class="com.endesa.grupoe.servicios.impl.GruposManiServicioImpl" 
+	singleton="false"> <property name="gruposManiDAO"><ref bean="gruposManiDAOBDECatalunya" 
+	/></property> </bean> <bean id="gruposMoviServicioImplBDECatalunya" class="com.endesa.grupoe.servicios.impl.GruposMoviServicioImpl" 
+	singleton="false"> <property name="gruposMoviDAO"><ref bean="gruposMoviDAOBDECatalunya" 
+	/></property> </bean> BDEAndExt <bean id="loginServicioImplBDEAndExt" class="com.endesa.grupoe.servicios.impl.LoginServicioImpl" 
+	singleton="false"> <property name="loginDAO"><ref bean="loginDAOBDEAndExt" 
+	/></property> </bean> <bean id="crisisServicioImplBDEAndExt" class="com.endesa.grupoe.servicios.impl.CrisisServicioImpl" 
+	singleton="false"> <property name="crisisDAO"><ref bean="crisisDAOBDEAndExt" 
+	/></property> </bean> <bean id="greServicioImplBDEAndExt" class="com.endesa.grupoe.servicios.impl.GreServicioImpl" 
+	singleton="false"> <property name="greDAO"><ref bean="greDAOBDEAndExt" /></property> 
+	</bean> <bean id="ubicacionDestinoServicioImplBDEAndExt" class="com.endesa.grupoe.servicios.impl.UbicacionDestinoServicioImpl" 
+	singleton="false"> <property name="ubicacionDestinoDAO"><ref bean="ubicacionDestinoDAOBDEAndExt" 
+	/></property> </bean> <bean id="gruposManiServicioImplBDEAndExt" class="com.endesa.grupoe.servicios.impl.GruposManiServicioImpl" 
+	singleton="false"> <property name="gruposManiDAO"><ref bean="gruposManiDAOBDEAndExt" 
+	/></property> </bean> <bean id="gruposMoviServicioImplBDEAndExt" class="com.endesa.grupoe.servicios.impl.GruposMoviServicioImpl" 
+	singleton="false"> <property name="gruposMoviDAO"><ref bean="gruposMoviDAOBDEAndExt" 
+	/></property> </bean> BDEAragon <bean id="loginServicioImplBDEAragon" class="com.endesa.grupoe.servicios.impl.LoginServicioImpl" 
+	singleton="false"> <property name="loginDAO"><ref bean="loginDAOBDEAragon" 
+	/></property> </bean> <bean id="crisisServicioImplBDEAragon" class="com.endesa.grupoe.servicios.impl.CrisisServicioImpl" 
+	singleton="false"> <property name="crisisDAO"><ref bean="crisisDAOBDEAragon" 
+	/></property> </bean> <bean id="greServicioImplBDEAragon" class="com.endesa.grupoe.servicios.impl.GreServicioImpl" 
+	singleton="false"> <property name="greDAO"><ref bean="greDAOBDEAragon" /></property> 
+	</bean> <bean id="ubicacionDestinoServicioImplBDEAragon" class="com.endesa.grupoe.servicios.impl.UbicacionDestinoServicioImpl" 
+	singleton="false"> <property name="ubicacionDestinoDAO"><ref bean="ubicacionDestinoDAOBDEAragon" 
+	/></property> </bean> <bean id="gruposManiServicioImplBDEAragon" class="com.endesa.grupoe.servicios.impl.GruposManiServicioImpl" 
+	singleton="false"> <property name="gruposManiDAO"><ref bean="gruposManiDAOBDEAragon" 
+	/></property> </bean> <bean id="gruposMoviServicioImplBDEAragon" class="com.endesa.grupoe.servicios.impl.GruposMoviServicioImpl" 
+	singleton="false"> <property name="gruposMoviDAO"><ref bean="gruposMoviDAOBDEAragon" 
+	/></property> </bean> BDEBaleares <bean id="loginServicioImplBDEBaleares" 
+	class="com.endesa.grupoe.servicios.impl.LoginServicioImpl" singleton="false"> 
+	<property name="loginDAO"><ref bean="loginDAOBDEBaleares" /></property> </bean> 
+	<bean id="crisisServicioImplBDEBaleares" class="com.endesa.grupoe.servicios.impl.CrisisServicioImpl" 
+	singleton="false"> <property name="crisisDAO"><ref bean="crisisDAOBDEBaleares" 
+	/></property> </bean> <bean id="greServicioImplBDEBaleares" class="com.endesa.grupoe.servicios.impl.GreServicioImpl" 
+	singleton="false"> <property name="greDAO"><ref bean="greDAOBDEBaleares" 
+	/></property> </bean> <bean id="ubicacionDestinoServicioImplBDEBaleares" 
+	class="com.endesa.grupoe.servicios.impl.UbicacionDestinoServicioImpl" singleton="false"> 
+	<property name="ubicacionDestinoDAO"><ref bean="ubicacionDestinoDAOBDEBaleares" 
+	/></property> </bean> <bean id="gruposManiServicioImplBDEBaleares" class="com.endesa.grupoe.servicios.impl.GruposManiServicioImpl" 
+	singleton="false"> <property name="gruposManiDAO"><ref bean="gruposManiDAOBDEBaleares" 
+	/></property> </bean> <bean id="gruposMoviServicioImplBDEBaleares" class="com.endesa.grupoe.servicios.impl.GruposMoviServicioImpl" 
+	singleton="false"> <property name="gruposMoviDAO"><ref bean="gruposMoviDAOBDEBaleares" 
+	/></property> </bean> BDECanarias <bean id="loginServicioImplBDECanarias" 
+	class="com.endesa.grupoe.servicios.impl.LoginServicioImpl" singleton="false"> 
+	<property name="loginDAO"><ref bean="loginDAOBDECanarias" /></property> </bean> 
+	<bean id="crisisServicioImplBDECanarias" class="com.endesa.grupoe.servicios.impl.CrisisServicioImpl" 
+	singleton="false"> <property name="crisisDAO"><ref bean="crisisDAOBDECanarias" 
+	/></property> </bean> <bean id="greServicioImplBDECanarias" class="com.endesa.grupoe.servicios.impl.GreServicioImpl" 
+	singleton="false"> <property name="greDAO"><ref bean="greDAOBDECanarias" 
+	/></property> </bean> <bean id="ubicacionDestinoServicioImplBDECanarias" 
+	class="com.endesa.grupoe.servicios.impl.UbicacionDestinoServicioImpl" singleton="false"> 
+	<property name="ubicacionDestinoDAO"><ref bean="ubicacionDestinoDAOBDECanarias" 
+	/></property> </bean> <bean id="gruposManiServicioImplBDECanarias" class="com.endesa.grupoe.servicios.impl.GruposManiServicioImpl" 
+	singleton="false"> <property name="gruposManiDAO"><ref bean="gruposManiDAOBDECanarias" 
+	/></property> </bean> <bean id="gruposMoviServicioImplBDECanarias" class="com.endesa.grupoe.servicios.impl.GruposMoviServicioImpl" 
+	singleton="false"> <property name="gruposMoviDAO"><ref bean="gruposMoviDAOBDECanarias" 
+	/></property> </bean> BDENoroeste <bean id="loginServicioImplBDENoroeste" 
+	class="com.endesa.grupoe.servicios.impl.LoginServicioImpl" singleton="false"> 
+	<property name="loginDAO"><ref bean="loginDAOBDENoroeste" /></property> </bean> 
+	<bean id="crisisServicioImplBDENoroeste" class="com.endesa.grupoe.servicios.impl.CrisisServicioImpl" 
+	singleton="false"> <property name="crisisDAO"><ref bean="crisisDAOBDENoroeste" 
+	/></property> </bean> <bean id="greServicioImplBDENoroeste" class="com.endesa.grupoe.servicios.impl.GreServicioImpl" 
+	singleton="false"> <property name="greDAO"><ref bean="greDAOBDENoroeste" 
+	/></property> </bean> <bean id="ubicacionDestinoServicioImplBDENoroeste" 
+	class="com.endesa.grupoe.servicios.impl.UbicacionDestinoServicioImpl" singleton="false"> 
+	<property name="ubicacionDestinoDAO"><ref bean="ubicacionDestinoDAOBDENoroeste" 
+	/></property> </bean> <bean id="gruposManiServicioImplBDENoroeste" class="com.endesa.grupoe.servicios.impl.GruposManiServicioImpl" 
+	singleton="false"> <property name="gruposManiDAO"><ref bean="gruposManiDAOBDENoroeste" 
+	/></property> </bean> <bean id="gruposMoviServicioImplBDENoroeste" class="com.endesa.grupoe.servicios.impl.GruposMoviServicioImpl" 
+	singleton="false"> <property name="gruposMoviDAO"><ref bean="gruposMoviDAOBDENoroeste" 
+	/></property> </bean> <bean id="notaManualServicioBDECatalunya" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="notaManualServicioImplBDECatalunya"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDECatalunya"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="filtrosNotasServicioBDECatalunya" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="filtrosNotasServicioImplBDECatalunya"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDECatalunya"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="loginServicioBDECatalunya" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="loginServicioImplBDECatalunya"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDECatalunya"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="crisisServicioBDECatalunya" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="crisisServicioImplBDECatalunya"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDECatalunya"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="greServicioBDECatalunya" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="greServicioImplBDECatalunya"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDECatalunya"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="ubicacionDestinoServicioBDECatalunya" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="ubicacionDestinoServicioImplBDECatalunya"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDECatalunya"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="gruposManiServicioBDECatalunya" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="gruposManiServicioImplBDECatalunya"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDECatalunya"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="gruposMoviServicioBDECatalunya" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="gruposMoviServicioImplBDECatalunya"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDECatalunya"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> BDEAndExt <bean id="loginServicioBDEAndExt" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="loginServicioImplBDEAndExt"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEAndExt"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="crisisServicioBDEAndExt" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="crisisServicioImplBDEAndExt"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEAndExt"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="greServicioBDEAndExt" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="greServicioImplBDEAndExt"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEAndExt"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="ubicacionDestinoServicioBDEAndExt" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="ubicacionDestinoServicioImplBDEAndExt"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEAndExt"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="gruposManiServicioBDEAndExt" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="gruposManiServicioImplBDEAndExt"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEAndExt"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="gruposMoviServicioBDEAndExt" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="gruposMoviServicioImplBDEAndExt"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEAndExt"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> BDEAragon <bean id="loginServicioBDEAragon" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="loginServicioImplBDEAragon"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEAragon"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="crisisServicioBDEAragon" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="crisisServicioImplBDEAragon"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEAragon"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="greServicioBDEAragon" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="greServicioImplBDEAragon"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEAragon"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="ubicacionDestinoServicioBDEAragon" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="ubicacionDestinoServicioImplBDEAragon"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEAragon"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="gruposManiServicioBDEAragon" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="gruposManiServicioImplBDEAragon"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEAragon"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="gruposMoviServicioBDEAragon" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="gruposMoviServicioImplBDEAragon"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEAragon"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> BDEBaleares <bean id="loginServicioBDEBaleares" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="loginServicioImplBDEBaleares"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEBaleares"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="crisisServicioBDEBaleares" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="crisisServicioImplBDEBaleares"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEBaleares"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="greServicioBDEBaleares" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="greServicioImplBDEBaleares"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEBaleares"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="ubicacionDestinoServicioBDEBaleares" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="ubicacionDestinoServicioImplBDEBaleares"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEBaleares"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="gruposManiServicioBDEBaleares" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="gruposManiServicioImplBDEBaleares"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEBaleares"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="gruposMoviServicioBDEBaleares" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="gruposMoviServicioImplBDEBaleares"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDEBaleares"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> BDECanarias <bean id="loginServicioBDECanarias" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="loginServicioImplBDECanarias"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDECanarias"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="crisisServicioBDECanarias" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="crisisServicioImplBDECanarias"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDECanarias"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="greServicioBDECanarias" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="greServicioImplBDECanarias"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDECanarias"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="ubicacionDestinoServicioBDECanarias" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="ubicacionDestinoServicioImplBDECanarias"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDECanarias"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="gruposManiServicioBDECanarias" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="gruposManiServicioImplBDECanarias"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDECanarias"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="gruposMoviServicioBDECanarias" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="gruposMoviServicioImplBDECanarias"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDECanarias"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> BDENoroeste <bean id="loginServicioBDENoroeste" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="loginServicioImplBDENoroeste"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDENoroeste"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="crisisServicioBDENoroeste" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="crisisServicioImplBDENoroeste"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDENoroeste"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="greServicioBDENoroeste" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="greServicioImplBDENoroeste"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDENoroeste"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="ubicacionDestinoServicioBDENoroeste" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="ubicacionDestinoServicioImplBDENoroeste"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDENoroeste"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="gruposManiServicioBDENoroeste" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="gruposManiServicioImplBDENoroeste"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDENoroeste"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> <bean id="gruposMoviServicioBDENoroeste" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"> 
+	<property name="target"><ref local="gruposMoviServicioImplBDENoroeste"/></property> 
+	<property name="transactionManager"><ref bean="transactionManagerBDENoroeste"/></property> 
+	<property name="transactionAttributeSource"><ref bean="defaultTxAttributes"/></property> 
+	</bean> </beans> -->

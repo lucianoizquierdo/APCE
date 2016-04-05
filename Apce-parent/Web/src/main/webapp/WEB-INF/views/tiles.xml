@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	<definition name="template" template="/WEB-INF/views/tiles/main_template.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="top" value="/WEB-INF/views/tiles/top.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/views/tiles/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/top.jsp" />
+	</definition>
+
+
+	<!-- Materia prima -->
+	<definition name="materiaPrimaList" extends="template">
+		<put-attribute name="title" value="Lista de Materias Primas" />
+        <put-attribute name="body" value="/WEB-INF/views/materiaPrima/materiaPrimaList.jsp"/>
+	</definition>
+	
+	<definition name="materiaPrimaAlta" extends="template">
+		<put-attribute name="title" value="Alta Materias Primas" />
+        <put-attribute name="body" value="/WEB-INF/views/materiaPrima/materiaPrimaAlta.jsp"/>
+	</definition>
+	
+	<!-- Tipo Materia prima -->
+	<definition name="tipoMateriaPrimaList" extends="template">
+		<put-attribute name="title" value="Lista de Tipos Materia Prima" />
+        <put-attribute name="body" value="/WEB-INF/views/materiaPrima/tipoMateriaPrimaList.jsp"/>
+	</definition>
+	
+	<definition name="tipoMateriaPrimaAlta" extends="template">
+		<put-attribute name="title" value="Alta Tipo Materia Prima" />
+        <put-attribute name="body" value="/WEB-INF/views/materiaPrima/tipoMateriaPrimaAlta.jsp"/>
+	</definition>
+	
+	<!-- Prueba -->
+	<definition name="prueba" extends="template">
+		<put-attribute name="title" value="Prueba" />
+        <put-attribute name="body" value="/WEB-INF/views/prueba/prueba.jsp"/>
+	</definition>
+	
+	
+	<!-- Sucursales -->
+	<definition name="sucursalList" extends="template">
+		<put-attribute name="title" value="Lista de Sucursales" />
+        <put-attribute name="body" value="/WEB-INF/views/sucursal/sucursalList.jsp"/>
+	</definition>
+	
+	<definition name="sucursalAlta" extends="template">
+		<put-attribute name="title" value="Alta Sucursal" />
+        <put-attribute name="body" value="/WEB-INF/views/sucursal/sucursalAlta.jsp"/>
+	</definition>
+	
+	<!-- Usuarios -->
+	<definition name="usuarioList" extends="template">
+		<put-attribute name="title" value="Lista de Usuarios" />
+        <put-attribute name="body" value="/WEB-INF/views/usuario/usuarioList.jsp"/>
+	</definition>
+	
+	<definition name="usuarioAlta" extends="template">
+		<put-attribute name="title" value="Alta Usuario" />
+        <put-attribute name="body" value="/WEB-INF/views/usuario/usuarioAlta.jsp"/>
+	</definition>
+	
+	<!-- Estandar Produccion -->
+	<definition name="estandarProduccionList" extends="template">
+		<put-attribute name="title" value="Lista de Estandares de Produccion" />
+        <put-attribute name="body" value="/WEB-INF/views/estandarProduccion/estandarProduccionList.jsp"/>
+	</definition>
+	
+	<definition name="estandarProduccionAlta" extends="template">
+		<put-attribute name="title" value="Alta de Estandar de Produccion" />
+        <put-attribute name="body" value="/WEB-INF/views/estandarProduccion/estandarProduccionAlta.jsp"/>
+	</definition>
+	
+	<!-- Solicitud deProduccion -->
+	<definition name="solicitudProduccionList" extends="template">
+		<put-attribute name="title" value="Lista de Solicitudes de Produccion" />
+        <put-attribute name="body" value="/WEB-INF/views/solicitudProduccion/solicitudProduccionList.jsp"/>
+	</definition>
+	
+	<definition name="solicitudProduccionAlta" extends="template">
+		<put-attribute name="title" value="Alta de Solicitud de Produccion" />
+        <put-attribute name="body" value="/WEB-INF/views/solicitudProduccion/solicitudProduccionAlta.jsp"/>
+	</definition>
+	
+	<!-- Orden de Produccion -->
+	<definition name="ordenProduccionAlta" extends="template">
+		<put-attribute name="title" value="Orden de Produccion" />
+        <put-attribute name="body" value="/WEB-INF/views/ordenProduccion/ordenProduccionAlta.jsp"/>
+	</definition>
+	
+	<definition name="ordenProduccionList" extends="template">
+		<put-attribute name="title" value="Lista de Ordenesde Produccion" />
+        <put-attribute name="body" value="/WEB-INF/views/ordenProduccion/ordenProduccionList.jsp"/>
+	</definition>
+	
+	<!-- Estadistica Materia Prima-->
+	<definition name="materiaPrimaEstadistica" extends="template">
+		<put-attribute name="title" value="Estadisticas Materias Primas" />
+        <put-attribute name="body" value="/WEB-INF/views/estadistica/materiaPrimaEstadistica/materiaPrimaEstadistica.jsp"/>
+	</definition>
+	
+	<!-- Estadistica Solicitud Produccion -->
+	<definition name="solicitudProduccionEstadistica" extends="template">
+		<put-attribute name="title" value="Informes Solicitud de Produccion" />
+        <put-attribute name="body" value="/WEB-INF/views/estadistica/solicitudProduccionEstadistica/solicitudProduccionEstadistica.jsp"/>
+	</definition>
+	
+	<!-- Estadistica Orden Produccion -->
+	<definition name="ordenProduccionEstadistica" extends="template">
+		<put-attribute name="title" value="Informes Orden de Produccion" />
+        <put-attribute name="body" value="/WEB-INF/views/estadistica/ordenProduccionEstadistica/ordenProduccionEstadistica.jsp"/>
+	</definition>
+	
+	<!-- Estadistica Solicitud Produccion Pendiente -->
+	<definition name="solicitudProduccionEstadisticaPendiente" extends="template">
+		<put-attribute name="title" value="Solicitudes de Produccion Pendientes" />
+        <put-attribute name="body" value="/WEB-INF/views/estadistica/solicitudProduccionEstadistica/solicitudProduccionEstadisticaPendiente.jsp"/>
+	</definition>
+	
+	<!-- Estadistica Orden Produccion Pendiente-->
+	<definition name="ordenProduccionEstadisticaPendiente" extends="template">
+		<put-attribute name="title" value="Ordenes de Produccion Pendientes" />
+        <put-attribute name="body" value="/WEB-INF/views/estadistica/ordenProduccionEstadistica/ordenProduccionEstadisticaPendiente.jsp"/>
+	</definition>
+
+</tiles-definitions>

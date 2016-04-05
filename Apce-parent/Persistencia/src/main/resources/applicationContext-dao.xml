@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+
+	<!--  #######################################################################  -->
+	<!--  DEFINICIÓN DE BEAN QUE SE ENCARGA DE LEVANTAR ARCHIVOS DE PROPIEDADES    -->
+ 	<!--  #######################################################################  -->	
+	<!-- <bean id="propertyConfigurer" name="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+		<list>
+		<value>classpath:/**/hibernate.properties</value>
+		<value>classpath:/**/jdbc.properties</value>
+		</list>
+		</property>
+	</bean> -->
+	
+	 <bean id="propertyConfigurerHibernate" name="propertyConfigurerHibernate" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="placeholderPrefix" value="${hibernate."></property>
+		<property name="locations">
+	<!-- 	<value>classpath*:/**/hibernate.properties</value> -->
+		<value>classpath*:hibernate.properties</value>
+		</property>
+	</bean>  
+	
+	<bean id="propertyConfigurerJdbc" name="propertyConfigurerJdbc" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="placeholderPrefix" value="${jdbc."></property>
+		<property name="locations">
+		<!-- <value>classpath*:/**/jdbc.properties</value> -->
+		<value>classpath*:jdbc.properties</value>
+		</property>
+	</bean> 
+
+
+<!-- <property name="ignoreUnresolvablePlaceholders" value="true"/> -->
+	<!--  <bean id="createUser" class="com.apce.servicios.inicializacion.CreateUser">
+		<property name="name" value="${hibernate.dialect}"/>
+	</bean>  -->  
+
+	
+	<!--  #########################################################  -->
+	<!--  DEFINICIÓN DE DATASOURCES  -->
+ 	<!--  #########################################################  -->
+  	<bean id="apce_desa_datasource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName">
+			<value>${jdbc.driver}</value>
+		</property>
+		<property name="url">
+			<value>${jdbc.url}</value>
+		</property>
+		<property name="username">
+			<value>${jdbc.user}</value>
+		</property>
+		<property name="password">
+			<value>${jdbc.password}</value>
+		</property>
+		<property name="maxActive">
+			<value>${jdbc.max_active}</value>
+		</property>
+		<property name="maxWait">
+			<value>${jdbc.max_wait}</value>
+		</property>
+		<property name="defaultReadOnly">
+			<value>${jdbc.default_read_only}</value>
+		</property>
+		<property name="validationQuery">
+			<value>${jdbc.validation_query}</value>
+		</property>
+    </bean>
+    
+    
+    <!--  #########################################################  -->
+	<!--  DEFINICIÓN DE SESSIONFACTORY PARA HIBERNATE  -->
+ 	<!--  #########################################################  -->
+    <bean id="mySessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+	<property name="dataSource" ref="apce_desa_datasource" />
+	<property name="annotatedClasses">
+		<list>
+			<value>com.apce.modelo.Usuario</value>
+			<value>com.apce.modelo.Permiso</value>
+			<value>com.apce.modelo.Sucursal</value>
+			<value>com.apce.modelo.MateriaPrima</value>
+			<value>com.apce.modelo.Rol</value>
+			<value>com.apce.modelo.Perfil</value>
+			<value>com.apce.modelo.Cinta</value>
+			<value>com.apce.modelo.SolicitudProduccion</value>
+			<value>com.apce.modelo.Material</value>
+			<value>com.apce.modelo.Produccion</value>
+			<value>com.apce.modelo.EstandarProduccion</value>
+			<value>com.apce.modelo.SolicitudProduccion</value>
+			<value>com.apce.modelo.OrdenProduccion</value>
+		</list>
+	</property>
+	<property name="hibernateProperties">
+	<props>
+		<!-- <prop key="hibernate.query.substitutions">${hibernate.query.substitutions}</prop> -->
+		<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+		<prop key="hibernate.show_sql">${hibernate.show_sql}</prop> 
+		<!-- <prop key="hibernate.connection.driver_class">${hibernate.hibernate.connection.driver_class}</prop> -->
+		<!-- <prop key="hibernate.dbcp.min_size">${hibernate.dbcp.min_size}</prop>
+		<prop key="hibernate.dbcp.max_size">${hibernate.dbcp.max_sizeprop}</prop>
+		<prop key="hibernate.dbcp.timeout">${hibernate.dbcp.timeout}</prop>
+		<prop key="hibernate.dbcp.max_statements">${hibernate.dbcp.max_statements}</prop> -->
+		<!-- <prop key="hibernate.dbcp.idle_test_period">${hibernate.dbcp.idle_test_period}</prop> -->
+	<!-- 	<prop key="hibernate.cache.provider_class">${hibernate.cache.provider_class}</prop>
+		<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop> -->
+	</props>
+	</property>
+</bean>
+
+
+
+
+	<!--  #########################################################  -->
+	<!--  DEFINICIÓN DE BEANS DEL MODELO DE DOMINIO					 -->
+ 	<!--  #########################################################  -->
+ 	
+	<bean id="baseDAO" class="com.apce.persistencia.hibernate.BaseDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean> 
+	<bean id="usuarioDAO" class="com.apce.persistencia.hibernate.UsuarioDAOImpl" parent="baseDAO"/>
+	<bean id="sucursalDAO" class="com.apce.persistencia.hibernate.SucursalDAOImpl" parent="baseDAO"/>
+	<bean id="materiaPrimaDAO" class="com.apce.persistencia.hibernate.MateriaPrimaDAOImpl" parent="baseDAO"/>
+	<bean id="rolDAO" class="com.apce.persistencia.hibernate.RolDAOImpl" parent="baseDAO"/>
+	<bean id="cintaDAO" class="com.apce.persistencia.hibernate.CintaDAOImpl" parent="baseDAO"/>
+	<bean id="materialDAO" class="com.apce.persistencia.hibernate.MaterialDAOImpl" parent="baseDAO"/>
+	<bean id="produccionDAO" class="com.apce.persistencia.hibernate.ProduccionDAOImpl" parent="baseDAO"/>
+	<bean id="estandarProduccionDAO" class="com.apce.persistencia.hibernate.EstandarProduccionDAOImpl" parent="baseDAO"/>
+	<bean id="solicitudProduccionDAO" class="com.apce.persistencia.hibernate.SolicitudProduccionDAOImpl" parent="baseDAO"/>
+	<bean id="ordenProduccionDAO" class="com.apce.persistencia.hibernate.OrdenProduccionDAOImpl" parent="baseDAO"/>
+		 
+</beans>      

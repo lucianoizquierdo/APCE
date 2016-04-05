@@ -1,0 +1,7 @@
+
+Links para manejar los roles dinamicamente
+
+- http://stackoverflow.com/questions/6893061/how-to-dynamically-decide-intercept-url-access-attribute-value-in-spring-secur
+- http://static.springsource.org/spring-security/site/faq/faq.html#faq-dynamic-url-metadata
+- http://stackoverflow.com/questions/8321696/creating-new-roles-and-permissions-dynamically-in-spring-security-3
+- http://stackoverflow.com/questions/2315873/get-spring-security-intercept-urls-from-database-or-properties

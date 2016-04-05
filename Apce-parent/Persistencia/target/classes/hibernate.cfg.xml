@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    	<mapping class="com.apce.modelo.Cinta"/>  
+        <mapping class="com.apce.modelo.MateriaPrima"/> 
+        <mapping class="com.apce.modelo.Usuario" />
+        <mapping class="com.apce.modelo.Sucursal"/>
+        <mapping class="com.apce.modelo.Rol"/>
+		<mapping class="com.apce.modelo.Perfil"/>
+		<mapping class="com.apce.modelo.Permiso"/>
+		<mapping class="com.apce.modelo.SolicitudProduccion"/>
+    </session-factory>
+</hibernate-configuration>

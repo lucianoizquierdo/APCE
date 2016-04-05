@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	
+	<import resource="classpath*:applicationContext-service.xml"/>
+	<import resource="classpath:applicationContext-dao.xml"/>   
+	
+	<!--  
+	 ######################################################### 
+	 DEFINICIÓN DE GESTOR TRANSACCIONES PARA CAPA SERVICIOS 
+	 Necesario si un servicio utiliza más de un DAO
+	 #########################################################      
+	-->
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+    <!--###################### Servicio padre del que van a heredar los otros servicios ###############-->
+    <!--   <bean id="transactionParent" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+     	abstract="true">
+	    <property name="transactionManager"><ref bean="transactionManager"/></property>
+        <property name="transactionAttributes">
+        	<props>
+            	<prop key="get*">PROPAGATION_SUPPORTS,readOnly</prop>
+            	<prop key="find*">PROPAGATION_SUPPORTS,readOnly</prop>
+            	<prop key="is*">PROPAGATION_SUPPORTS,readOnly</prop>
+            	<prop key="existe*">PROPAGATION_SUPPORTS,readOnly</prop>
+            	<prop key="alta*">PROPAGATION_SUPPORTS</prop>
+            	<prop key="baja*">PROPAGATION_SUPPORTS,readOnly</prop>
+            	<prop key="modificacion*">PROPAGATION_SUPPORTS,readOnly</prop>
+            	<prop key="*">PROPAGATION_REQUIRED</prop> 
+        	</props>
+    	</property>
+   	</bean> 
+	-->
+	<!-- 
+	<tx:advice id="altaUsuario">
+		<tx:attributes>
+			<tx:method name="altaUsuario" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:advisor pointcut="execution(* *..UsuarioService.*(..))" 
+		advice-ref="altaUsuario"/>
+	</aop:config> -->
+	 
+
+
+		
+</beans>      
